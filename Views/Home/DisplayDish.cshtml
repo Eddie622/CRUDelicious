@@ -1,0 +1,19 @@
+@model CRUDelicious.Models.Dish
+
+@{
+    ViewData["Title"] = "Dish Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Name</h1>
+    <h3>@Model.Chef</h3>
+    <p>@Model.Description</p>
+    <p>Calories: @Model.Calories</p>
+    <p>Tastiness: @Model.Tastiness</p>
+
+    <a href= "../../@Model.DishId/Edit">Edit</a>
+
+    <form action="../../@Model.DishId/Delete" method="post">
+        <input value="Delete Dish" type="submit">    
+    </form>
+</div>

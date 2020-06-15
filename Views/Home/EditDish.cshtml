@@ -1,0 +1,34 @@
+@model CRUDelicious.Models.Dish
+
+@{
+    ViewData["Title"] = "Dish Edit";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edit Dish!</h1>
+    <form asp-action="ProcessEdit" asp-controller="Home" method="post">
+        <input hidden Name="DishId" value="@Model.DishId">
+
+        <span asp-validation-for="Name"></span>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"><br><br>
+        
+        <span asp-validation-for="Chef"></span>
+        <label asp-for="Chef"></label>
+        <input asp-for="Chef"><br><br>
+
+        <span asp-validation-for="Tastiness"></span>
+        <label asp-for="Tastiness"></label>
+        <select asp-for="Tastiness" asp-items="Dish.TastinessValues"></select><br><br>
+
+        <span asp-validation-for="Calories"></span>
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories"><br><br>
+
+        <span asp-validation-for="Description"></span>
+        <label style="vertical-align:top;" asp-for="Description"></label>
+        <textarea asp-for="Description"></textarea><br><br>
+
+        <input value="Edit Dish" type="submit">    
+    </form>
+</div>
